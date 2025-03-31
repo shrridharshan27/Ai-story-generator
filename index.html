@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Story Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        #story {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Story Generator</h1>
+    <button onclick="generateStory()">Generate Story</button>
+    <div id="story"></div>
+
+    <script>
+        const subjects = ["A wizard", "An astronaut", "A detective", "A pirate", "A robot"];
+        const actions = ["found a magical stone", "solved a mysterious case", "discovered a secret planet", "battled a sea monster", "invented a time machine"];
+        const endings = ["and saved the world.", "but lost it forever.", "and became famous.", "and made a shocking discovery.", "but it was all a dream."];
+
+        function generateStory() {
+            const randomSubject = subjects[Math.floor(Math.random() * subjects.length)];
+            const randomAction = actions[Math.floor(Math.random() * actions.length)];
+            const randomEnding = endings[Math.floor(Math.random() * endings.length)];
+            
+            document.getElementById("story").innerText = `${randomSubject} ${randomAction} ${randomEnding}`;
+        }
+    </script>
+</body>
+</html>
